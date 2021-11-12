@@ -1,0 +1,203 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+
+/**------------- Start of navbar ----------------**/
+
+.menu {
+	background-color:#FFAD00;
+	
+}
+
+.logo {
+	border-radius: 50%;
+}
+
+
+/**------------- Start of body style ----------------**/
+  
+.banner {
+	background:url("../images/dog.jpg");
+	background-position:center center;
+	background-repeat: no-repeat no-repeat;
+	height:609px;
+	overflow: hidden;
+	
+}
+  /**------------ Start of About page style  -------------**/
+
+.card img {
+	width: 400px;
+	height: 300px;
+}
+
+h1 {
+	text-align: center;
+}
+  
+
+
+
+  #body #content .content .about {
+	width:640px;
+	height:auto;
+	overflow:hidden;
+}
+#body #content .content .about h2 {
+	margin:80px 0 0 30px;
+	font-family: "Myriad Pro";
+}
+#body #content .content .about ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+#body #content .content .about ul li {
+	clear:both;
+	width:600px;
+	padding:20px 10px 0 30px;
+}
+#body #content .content .about ul li h2 {
+	margin:0;
+	padding:0;
+	font-weight:normal;
+}
+#body #content .content .about ul li h2 a {
+	color:#ff9506;
+	font-size:24 px;
+	font-family: "Myriad Pro";
+	text-decoration:none;
+}
+#body #content .content .about ul li h2 a:hover {
+	color: #7F7154;
+}
+#body #content .content .about ul li p {
+	color: #7F7154;
+	font-family: "Myriad Pro";
+	font-size: 14px;
+	text-align: justify;
+}
+#body #content .content .about ul li p span {
+	display:block;
+}
+#body #content .content .about ul li p a {
+	color:#000000;
+	text-decoration:underline;
+}
+#body #content .content .about ul li p a:hover {
+	color:#7F7154;
+}
+/**------------ End of About page style  -------------**/
+  
+  /**---------------- Start for Contact Page Style ------------------**/
+  
+  #body #content .content div p {
+	margin: 10px 0 0 30px;
+	padding:0 15px 0 0;
+	font-family: "Myriad Pro";
+	font-size:14px;
+	line-height:25px;
+	color:#7F7154;
+}
+#body #content .content div p a {
+	color:#FF9E01;
+}
+#body #content .content div p a:hover {
+	color:#7F7154;
+}
+#body #content .content ul.connect {
+	font-family: "Myriad Pro";
+	margin: 50px 0 0 30px;
+}
+#body #content .content ul.connect li {
+	width:640px;
+	width:400px;
+	margin-top:20px;
+}
+#body #content .content ul.connect li h2 {
+	border-style:solid;
+	border-color:#ccc;
+	border-width:1px;
+	border-top:none;
+	border-right:none;
+	border-left:none;
+}
+#body #content .content ul.connect li span {
+	display:block;
+}
+#body #content .content ul.connect li span a {
+	color:#FF9E01;
+}
+#body #content .content ul.connect li span a:hover {
+	color:#7F7154;
+}
+/**---------------- End for Contact Page Style ------------------**/
+  
+  
+  
+  
+/**--------------- Start of footer style ------------------**/
+ 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+
+
+footer {
+  position: relative;
+  width: 100%;
+  background: #FFAD00;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social_icon, footer .menu {
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  margin: 10px 0;
+}
+
+footer .social_icon li, footer .menu li {
+  list-style: none;
+}
+footer .social_icon li a {
+  font-size: 2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .social_icon li a:hover {
+  transform: translateY(-15px);
+  color: blue;
+}
+
+footer .menu li a {
+  font-size: 1.2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+}
+footer .menu li a:hover {
+  opacity: 1;
+  color: #fff;
+}
+p {
+  color : #eee;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+
