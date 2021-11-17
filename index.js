@@ -1,38 +1,40 @@
-
 class producto {
-    constructor(nombre , cantidad , precio , categoria , stock) {
+    constructor(nombre , cantidad , precio ) {
         this.nombre = nombre;  
         this.cantidad = cantidad;  
-        this.precio = precio; 
-        this.categoria = categoria; 
-        this.stock = stock; 
+        this.precio = parseFloat (precio); 
     }
 
     precioFinal() {
         let iva = this.precio * 0.21
         return this.precio + iva
     }
-    updateStock(){
-        this.stock = this.stock - 1 ; 
-    }
 }
 
-let muerde = new producto ("MUERDE MUERDE" , 1 , 50 , "Juguete" , 20 ) ; 
-console.log ("Gracias por comprar " + muerde.nombre + " tu precio final es " + muerde.precioFinal()  );
+let arrayProductos = [];
 
-let chow = new producto ("CHOW CHOW" , 1 , 70 , "Juguete" , 20 ) ; 
-console.log ("Gracias por comprar " + chow.nombre + " tu precio final es " + chow.precioFinal()  );
+do {
+    let product = prompt ("Ingrese el producto que desea comprar o fin para terminar de agregar"); 
+    if (product === "fin" || product === "FIN" || product ==="Fin"){
+        break;
+    }
+    else {
+        const nombreP = product;
+        const cantidadP = prompt ("Ingrese la cantidad comprada del producto");
+        const precioP = prompt ("Ingrese el precio del producto");
+        arrayProductos.push(new producto(nombreP, cantidadP, precioP));
+    }
+    
+} while (producto != "fin" || producto != "FIN" || producto !="Fin")
 
-let tira = new producto ("TIRA TIRA" , 1 , 80 , "Juguete" , 20 ) ;
-console.log ("Gracias por comprar " + tira.nombre + " tu precio final es " + tira.precioFinal()  ); 
+console.log (arrayProductos);
 
-let soguita = new producto ("SOGUITA" , 1 , 90 , "Juguete" , 20 ) ;
-console.log ("Gracias por comprar " + soguita.nombre + " tu precio final es " + soguita.precioFinal()  );
+for (let producto of arrayProductos) {
+    console.log (producto.nombre);
+    console.log (producto.cantidad);
+    console.log (producto.precio);
+    console.log (producto.precioFinal());
+}
 
-let buzito = new producto ("BUZITO" , 1 , 100 , "Ropa" , 10 ) ;
-console.log ("Gracias por comprar " + buzito.nombre + " tu precio final es " + buzito.precioFinal()  );
-
-let perritos = new producto ("PERRITOS" , 1 , 100 , "Juguete" , 30 ) ; 
-console.log ("Gracias por comprar " + perritos.nombre + " tu precio final es " + perritos.precioFinal()  );
 
 
