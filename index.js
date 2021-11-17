@@ -2,12 +2,16 @@ class producto {
     constructor(nombre , cantidad , precio ) {
         this.nombre = nombre;  
         this.cantidad = cantidad;  
-        this.precio = parseFloat (precio); 
+        this.precio = parseFloat (precio);
+        this.disponible = true; 
     }
 
     precioFinal() {
         let iva = this.precio * 0.21
         return this.precio + iva
+    }
+    vender () {
+        this.disponible = false;
     }
 }
 
@@ -35,6 +39,38 @@ for (let producto of arrayProductos) {
     console.log (producto.precio);
     console.log (producto.precioFinal());
 }
+
+//poco stock
+const pocoStock = arrayProductos.filter(producto => producto.cantidad <= 3);
+console.log (`Productos con poco stock, queda ${pocoStock}`);
+
+for (let producto of pocoStock){
+    console.log (`el producto que queda con poco stock es ${producto.nombre} con una cantidad de ${producto.cantidad}`); 
+
+}
+
+//sin stock
+
+const sinStock = arrayProductos.filter (producto => producto.cantidad == 0 || producto.disponible == false)
+console.log(`nos quedamos sin stock ${sinStock}`);
+
+
+// ordenados por precio 
+
+let ordenadosPrecio = []; 
+
+ordenadosPrecio = arrayProductos.map(elemento => elemento); 
+
+ordenadosPrecio.sort (function(a,b){
+    return a.precio - b.precio ;
+});
+
+console.log (`Ordenados por precios ascendentes`); 
+console.log (ordenadosPrecio); 
+
+for (let producto of ordenadosPrecio) {
+    console.log ("Ordenados de manera ascendente");
+};
 
 
 
