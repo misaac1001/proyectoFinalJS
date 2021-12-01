@@ -1,4 +1,4 @@
-class producto {
+class Producto {
     constructor(nombre , cantidad , precio ) {
         this.nombre = nombre;  
         this.cantidad = cantidad;  
@@ -13,9 +13,13 @@ class producto {
     vender () {
         this.disponible = false;
     }
+    precioSugerido () {
+        return this.precio * 1.21 * 1.25;
+    }
 }
 
 let arrayProductos = [];
+let product = 0 ; 
 
 do {
     let product = prompt ("Ingrese el producto que desea comprar o fin para terminar de agregar"); 
@@ -24,39 +28,60 @@ do {
     }
     else {
         const nombreP = product;
-        const cantidadP = prompt ("Ingrese la cantidad comprada del producto");
         const precioP = prompt ("Ingrese el precio del producto");
-        arrayProductos.push(new producto(nombreP, cantidadP, precioP));
+        const cantidadP = prompt ("Ingrese la cantidad comprada del producto");
+        arrayProductos.push(new Producto(nombreP, precioP, cantidadP ));
     }
     
-} while (producto != "fin" || producto != "FIN" || producto !="Fin")
+} 
+
+while (product != "fin" || product != "Fin" || product != "FIN" );
 
 console.log (arrayProductos);
 
-for (let producto of arrayProductos) {
-    console.log (producto.nombre);
-    console.log (producto.cantidad);
-    console.log (producto.precio);
-    console.log (producto.precioFinal());
+for (let Producto of arrayProductos) {
+    let contenedor = document.createElement("p"); 
+    //Inner
+    contenedor.innerHTML = `<h5> Nombre: ${Producto.nombre}</h5>
+                            <p> Precio: ${Producto.precio} </p>
+                            <p> Cantidad: ${Producto.cantidad} </p>`;
+
+    document.body.appendChild (contenedor); 
 }
 
 //poco stock
 const pocoStock = arrayProductos.filter(producto => producto.cantidad <= 3);
-console.log (`Productos con poco stock, queda ${pocoStock}`);
+document.write ("<h5> Lista de productos con poco stock (menos de 3 unidades): </h5> ");
 
-for (let producto of pocoStock){
-    console.log (`el producto que queda con poco stock es ${producto.nombre} con una cantidad de ${producto.cantidad}`); 
+for (let Producto of pocoStock){
+    let contenedor = document.createElement("p");
+    //Inner
+    contenedor.innerHTML = `<h5> Nombre: ${Producto.nombre}</h5>
+                            <p> Precio: ${Producto.precio} </p>
+                            <p> Cantidad: ${Producto.cantidad} </p>`;
+
+    document.body.appendChild(contenedor); 
 
 }
 
 //sin stock
 
-const sinStock = arrayProductos.filter (producto => producto.cantidad == 0 || producto.disponible == false)
-console.log(`nos quedamos sin stock ${sinStock}`);
+const sinStock = arrayProductos.filter (producto => producto.cantidad === 0 || producto.disponible === false);
+console.log(sinStock);
+document.write ("<h5> Lista de productos sin stock (cantidad = 0 o disponible = false): </h5>");
+for ( let Producto of sinStock){
+    document.write ("<h5> Lista de productos sin stock: </h5> ");
+    let contenedor = document.createElement("p"); 
+    contenedor.innerHTML = `<h5> Nombre: ${Producto.nombre}</h5>
+                            <p> Precio: ${Producto.precio} </p>
+                            <p> Cantidad: ${Producto.cantidad} </p>`;
+
+    document.body.appendChild(contenedor);
+}
 
 
 // ordenados por precio 
-
+/* 
 let ordenadosPrecio = []; 
 
 ordenadosPrecio = arrayProductos.map(elemento => elemento); 
@@ -71,6 +96,6 @@ console.log (ordenadosPrecio);
 for (let producto of ordenadosPrecio) {
     console.log ("Ordenados de manera ascendente");
 };
-
+ */
 
 
