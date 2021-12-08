@@ -33,63 +33,84 @@
 
   <h1> NUESTROS PRODUCTOS</h1>
 
-  <div class="card-group">
-    <div class="card m-2">
-      <img src="images/juguete1.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">MUERDE MUERDE</h5>
-        <p class="card-text dark ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione culpa quam exercitationem vel magnam at inventore harum, obcaecati, architecto, quia cumque necessitatibus? Consequuntur ullam voluptatem esse suscipit facilis et repellendus.</p>
+<!-- CARD DE PRODUCTOS -->
+<div class="contenedor-productos">
+</div>
 
-      </div>
-    </div>
-    <div class="card m-2">
-      <img src="images/juguete2.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">CHOW CHOW</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quibusdam suscipit iste quia culpa corporis quam blanditiis et molestiae enim, nostrum esse reiciendis facere numquam reprehenderit eligendi alias repellendus quasi!.</p>
 
-      </div>
-    </div>
-    <div class="card m-2">
-      <img src="images/juguete3.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">TIRA TIRA</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, temporibus eum? Laborum quas perspiciatis facilis ex alias delectus sint distinctio, nulla quod! Fugiat odio dolorem eos sint quaerat enim amet.</p>
-      
-      </div>
-    </div>
-  </div>
+<!-- calculo de productos -->
 
-  <div class="card-group">
-    <div class="card m-2">
-      <img src="images/juguete4.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">SOGUITA</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-       
-      </div> 
-    </div> 
-    <div class="card m-2">
-      <img src="images/juguete5.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">BUZITO</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        
+ <div class="tabla-calculo" id="tabla-calculo">
+    <table class="tabla">
+        <caption class="titulo-tabla"></caption>
+        <thead class="cabecera border-top-right">
+            <tr>
+                <th class="border-top-left">Nombre Producto</th>
+                <th>Cantidad</th>
+                <th>Unidad</th>
+                <th class="border-top-right">Total</th>
+            </tr>
+        </thead>
+        <tbody id="carrito-body">
+        </tbody>
+        <tfoot id="footer">
+            <tr>
+                <td class="border-bottom-left border-bottom-right" colspan=4>¡No hay ningún producto en el carrito!
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+<!-- FOOTER TABLA -->
+<template id="tfooter">
+  <tr class="none">
+      <td colspan=2 class="border-bottom-left"><button id="vaciar-tabla" class="button">Limpiar carrito</button>
+      </td>
+      <td class="negrita">Precio Total</td>
+      <td id="total-a-pagar" class="precio-tabla border-bottom-right negrita">5.00</td>
+  </tr>
+</template>
+
+
+<!-- FILAS -->
+<template id="agregar-producto-al-carro">
+  <tr>
+      <td id="producto">Juguetes</td>
+      <td><button id="menos-cantidad" class="button">-</button><span id="cant">1</span><button id='mas-cantidad'
+              class="button">+</button></td>
+      <td class="precio-tabla" id="precio-uni">3.50</td>
+      <td class="precio-tabla" id="precio-total-prod">3.50</td>
+  </tr>
+</template>
+
+
+<!-- PRODUCTO -->
+<template id="tprod">
+  <article class="cartola">
+
+      <!-- IMG DEL PROD -->
+      <div class="contenedor-img">
+          <img src="" width="150px" alt="">
       </div>
-    </div>
-    <div class="card m-2">
-      <img src="images/juguete6.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">PERRITOS</h5>
-        <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        
+
+      <!-- Nombre y descripcion -->
+      <div class="info">
+          <h2 class="nombre-prod">Nombre</h2>
+          <hr class="separador">
+          <p class="descripcion-prod">Descripción</p>
       </div>
-    </div>
-  </div>
+
+      <!-- PRECIO Y AGREGAR AL CARRITO -->
+      <div class="div-precio-boton">
+          <p class="precio">precio Producto</p>
+          <button class="boton">Agregar</button>
+      </div>
+  </article>
+</template>
   
-  <h2>PRODUCTOS SELECCIONADOS</h2>
-  <script src="index.js"></script>
-  <p></p>
+
 </section>
 
 
@@ -116,6 +137,7 @@
   </ul>
   <p>&copy2021 PetShop BELNADOGS | All Rights Reserved</p>
 </footer>
+<script src="index.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
