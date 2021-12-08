@@ -87,7 +87,7 @@ h1 {
 	text-decoration:underline;
 }
 #body #content .content .about ul li p a:hover {
-	color:#7F7154;
+	color:#000000;
 }
 /**------------ End of About page style  -------------**/
   
@@ -193,7 +193,7 @@ footer .menu li a:hover {
   color: #fff;
 }
 p {
-  color : #eee;
+  color : rgb(0, 0, 0);
   text-align: center;
   margin-top: 15px;
   margin-bottom: 10px;
