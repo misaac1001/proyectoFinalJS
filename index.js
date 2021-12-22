@@ -24,6 +24,7 @@ const productos = {
       descripcion: 'Nunca falla.',
       srcImg: 'images/juguete4.jpg'
     }
+
 }
 
 
